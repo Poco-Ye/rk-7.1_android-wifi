@@ -1,0 +1,14 @@
+--- drivers/net/wireless/rockchip_wlan/wifi_sys/rkwifi_sys_iface.c
++++ drivers/net/wireless/rockchip_wlan/wifi_sys/rkwifi_sys_iface.c
+@@ -122,6 +122,11 @@ static ssize_t wifi_chip_read(struct class *cls, struct class_attribute *attr, c
+             printk("Current WiFi chip is RTL8189FS.\n");
+         }
+ 
++        if(type == WIFI_RTL8812AU) {
++            count = sprintf(_buf, "%s", "RTL8812AU");
++            printk("Current WiFi chip is RTL8812AU.\n");
++        }
++
+     return count;
+ }
+ 
